@@ -1,0 +1,5 @@
+rawdata<-read.csv("household_power_consumption.txt", sep=";", na.strings = "?",stringsAsFactors = FALSE)
+mydata<-subset(rawdata,Date=="1/2/2007" | Date=="2/2/2007")
+png(filename="plot1.png")
+with(mydata,hist(Global_active_power,col="red",main="Global Active Power",xlab="Global Active Power (kilowatts)",ylab="Frequency"))
+dev.off()
